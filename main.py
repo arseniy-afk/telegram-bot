@@ -11,8 +11,7 @@ last_reply = {}
 TIMEZONE = pytz.timezone("Europe/Berlin")
 
 def is_off_hours():
-    now = datetime.now(TIMEZONE)
-    return not (9 <= now.hour < 18)
+    return True
 
 @bot.message_handler(func=lambda message: True)
 def auto_reply(message):
