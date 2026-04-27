@@ -25,9 +25,10 @@ def auto_reply(message):
         return
 
     text = """Hi! Our team is currently offline.
-We’ll get back to you tomorrow.
 
-Our working hours are 9:00–18:00 CET."""
+We’ll get back to you as soon as we’re back online 😊
+
+Working hours: Monday–Friday, 9:00–18:00 CET."""
 
     bot.send_message(chat_id, text)
     last_reply[chat_id] = today
