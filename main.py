@@ -4,7 +4,6 @@ import pytz
 import os
 
 TOKEN = os.getenv("TOKEN")
-print("TOKEN:", TOKEN)
 bot = telebot.TeleBot(TOKEN)
 
 last_reply = {}
@@ -12,7 +11,8 @@ last_reply = {}
 TIMEZONE = pytz.timezone("Europe/Berlin")
 
 def is_off_hours():
-    return True
+    now = datetime.now(TIMEZONE)
+    return not (9 <= now.hour < 18)
 
 @bot.message_handler(func=lambda message: True)
 def auto_reply(message):
