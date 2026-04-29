@@ -4,6 +4,8 @@ import pytz
 import os
 
 TOKEN = os.getenv("TOKEN")
+if not TOKEN:
+    raise ValueError("TOKEN not set")
 bot = telebot.TeleBot(TOKEN)
 
 last_reply = {}
